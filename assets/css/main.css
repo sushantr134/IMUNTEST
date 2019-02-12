@@ -578,21 +578,63 @@ header nav ul li a {
   padding: 2em;
   margin-top: 2em;
   width: 100%;
+  position: relative;
 }
 
 .main #testimonials .__container .__slider .item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -ms-grid-columns: 4fr 1fr;
+      grid-template-columns: 4fr 1fr;
   grid-auto-rows: none;
-  grid-row-gap: 1em;
-  grid-column-gap: 1em;
+  grid-row-gap: 0;
+  grid-column-gap: 0;
+}
+
+.main #testimonials .__container .__slider .item p {
+  background: linear-gradient(-110deg, #2e47d6, #34028a);
+  color: #ffffff;
+  text-align: justify;
+  border-radius: 1.2em;
+  width: 90%;
+  padding: 3em 2em 2em 2em;
+  max-height: 360px;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  position: relative;
+}
+
+.main #testimonials .__container .__slider .item p label {
+  position: absolute;
+  top: 0;
+  left: 1%;
+  font-size: 3.5vmax;
+  font-style: italic;
+}
+
+.main #testimonials .__container .__slider .item p .__by {
+  position: absolute;
+  bottom: 5%;
+  right: 4%;
+  font-size: 0.89rem;
 }
 
 .main #testimonials .__container .__slider .item .user {
   border-radius: 100%;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main #testimonials .__container .__slider .item .user img {
@@ -658,21 +700,39 @@ header nav ul li a {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
   position: absolute;
-  top: -5em;
-  right: 6em;
+  top: -32%;
+  right: 10%;
+  border: 1px solid black;
   z-index: 1000;
   background: white;
-  width: 30vw;
-  border-radius: 0.3em solid black;
+  width: 25vw;
+  min-height: 360px;
+  max-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1em;
 }
 
-.main footer .container__footer .Contactform label {
+.main footer .container__footer .Contactform h2 {
   font-size: 1.2rem;
+  position: absolute;
+  top: 1em;
+  left: 8%;
   color: #06065c;
 }
 
 .main footer .container__footer .Contactform form {
-  padding: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -687,8 +747,42 @@ header nav ul li a {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #06065c;
+  width: 100%;
+  padding: 1em;
   -webkit-box-shadow: 0 10px 10px solid grey;
           box-shadow: 0 10px 10px solid grey;
+}
+
+.main footer .container__footer .Contactform form .input {
+  position: relative;
+  margin-bottom: 1.2em;
+  width: inherit;
+}
+
+.main footer .container__footer .Contactform form .input input, .main footer .container__footer .Contactform form .input textarea {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.main footer .container__footer .Contactform form .input label {
+  position: absolute;
+  top: -22%;
+  background: white;
+  font-size: 0.68rem;
+  left: 6%;
+}
+
+.main footer .container__footer .Contactform form .submitButton {
+  padding: 1em;
+  background: #283686;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-radius: 0.3em;
+  width: 70%;
+  position: absolute;
+  bottom: 10%;
+  cursor: pointer;
 }
 
 .main footer .TaglineEnd {
