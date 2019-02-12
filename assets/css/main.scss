@@ -1,0 +1,477 @@
+*,*::after,*::before
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+
+$color_bg_primary : #172337;
+$color_shade_primary: linear-gradient(-270deg,#172337ee,#172337c0,#172337af,#172337a8,transparent);
+$color_text : #ffffff;
+
+@mixin ReponsiveImage($width,$max_width) {
+    max-width: $max_width;
+    width: $width;
+}
+
+@mixin GridMaker($col,$row,$rowgap,$colgap) {
+      display: grid;
+      grid-template-columns: $col;
+      grid-auto-rows: $row;
+      grid-row-gap: $rowgap;
+      grid-column-gap: $colgap;  
+}
+
+@mixin Align($justify,$align) {
+    display: flex;
+    justify-content:$justify;
+    align-items:$align;
+}
+
+
+/*Header navbar*/
+
+header
+{
+  background: transparent;
+  color:$color_text;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.6em;
+  position: absolute;
+  top: 0;
+  @include GridMaker(1fr 3fr,none,0.55em,0.55em);
+
+   .header_logo
+   {
+       @include Align(flex-start,center);
+       margin-left: 2em;
+       img
+       {
+            @include ReponsiveImage(22%,100%);
+       }
+       .__logoText
+       {
+           margin-left: 0.645em;
+           font-size: 0.889rem;
+           font-weight: 300;
+           font-family: 'Montserrat', sans-serif;
+       }
+   }
+
+    nav
+    {
+        @include Align(flex-end,center);
+        ul
+        {
+            list-style: none;
+            @include Align(center,center);
+
+            li
+            {
+                padding: 0.4em;
+                margin-right: 0.6em;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 0.989rem;
+                text-transform: capitalize;
+               
+                a
+                {
+                    text-decoration: none;
+                    text-transform: inherit;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+/*Section*/
+
+.btn
+{
+   padding: 0.35em;
+   border-radius: 5em;
+   background: black;
+   width: 8.5em;
+   @include Align(center,center);
+   label
+   {
+    color:$color_text;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer !important;
+
+    a
+    {
+        color:inherit;
+        text-decoration: none;
+    }
+   }
+
+   &.primary
+   {
+       background: linear-gradient(-270deg,#e79703,#fcda9b);
+   }
+   
+   &.default
+   {
+       background: transparent;
+       border:0.1em solid white;
+   }
+}
+
+.main
+{
+    box-sizing: border-box;
+    background: url(/assets/images/b1.jpg) fixed no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    
+    .container
+    {
+        background: $color_shade_primary;
+        width: 100%;
+        height: inherit;
+        @include Align(flex-start,center);
+        
+        .__UpperTextHolder
+        {
+            width: 45%;
+            padding: 1em;
+            margin: 0 0 -2% 7%;
+            h1
+            {
+                color: $color_text;
+                font-weight: 100;
+                text-align: left;
+                font-size: 3.2vmax;
+            
+            }
+
+            p
+            {
+                color: $color_text;
+                margin-top: 1.6em;
+                font-size: 1.13vmax;
+                text-align: justify;
+            }
+           
+            .__UpperButtons
+            {
+                width: 50%;
+                margin-top: 3em;
+                @include GridMaker(1fr 1fr,none,1em,1em);
+            }
+
+            .__UpperContact
+            {
+                color: #f7cf85;
+                margin-top: 3em;
+                h5
+                {
+                    font-weight: 100;
+                    color: $color_text !important;
+                    margin-bottom: 0.6em;
+                }
+                
+            }
+          
+        }
+   
+    }
+
+    .ArrowDown
+    {
+        @include Align(center,center);
+        position: absolute;
+        bottom: 5%;
+        width: 100%;
+        a
+        {
+            text-decoration: none;
+            color: inherit;
+        }
+        .__icon
+        {
+           
+                width: 15px;
+                height: 15px;
+                border-top:0.2em solid #d4d4d4;
+                border-right:0.2em solid #d4d4d4;
+                border-radius: 0.16em;
+                transform: rotate(135deg);
+            
+        }
+    }
+
+    #conferences
+    {
+
+            width: 100%;
+            height: auto;
+            background: white;
+            margin: 0 auto;
+           .header
+           {
+               @include GridMaker(repeat(auto-fit,minmax(250px,1fr)),none,1em,1em);
+               padding: 3em;
+               justify-content: center;
+               align-items: center;
+               h1
+               {
+                   color: #06065c; 
+                   font-size: 2rem;
+                   width: 50%; 
+                   text-align: center;
+               }
+               picture
+               {
+                @include Align(flex-end,center);
+              
+                label
+                {
+                    color: #06065c;
+                    text-align: right;
+                    line-height: 1.5em;
+                }
+                img
+                {
+                    @include ReponsiveImage(30%,50%);
+               
+                }
+               }
+              
+           }
+
+           .container
+           {
+               all:unset;
+               background: inherit;
+               width: 100%;
+
+               .__cardBoxes
+               {
+                padding: 3em;
+                @include GridMaker(repeat(auto-fit,minmax(250px,1fr)),none,1em,1em);
+                justify-items: center;
+                align-items: center;
+                .card
+                {
+                    width: 60%;
+                    flex-direction: column;
+                    color: $color_text;
+                    border-radius: 0.55em;
+                    box-shadow: 0px 1px 20px 1px grey;
+                    .__cardContainer
+                    {
+                        background:linear-gradient(385deg,#151958e1,#1b1f5250);
+                        height: inherit;
+                        width: 100%;
+                        border-radius: inherit;
+                        @include Align(flex-end,center);
+                        flex-direction: column;
+
+                        h2
+                        {
+                            font-size: 1.6rem;
+                            font-weight: bold;
+                            margin-bottom: 2em;
+                            text-align: center;
+                        }
+                        .buttons
+                        {
+                            @include Align(center,center);
+    
+                            .btn
+                            {
+                                margin-right: 8%;
+                                margin-bottom: 2em;
+                                width: 9em;
+                                padding: 0.5em;
+                               
+                            }
+                        }
+                    }
+                   
+                     &.item1
+                     {
+                         background: url(/assets/images/hanoi.jpg) no-repeat;
+                         background-position: center;
+                         background-size: cover;
+                         height:20em;
+                     }
+                     &.item2
+                     {
+                         background: url(/assets/images/hanoi.jpg) no-repeat;
+                         background-position: center;
+                         background-size: cover;
+                         height:15em;
+                     }
+                }
+
+               }
+             
+           }
+    
+    }
+
+
+    #partners
+    {
+        width: 100%;
+        height: auto;
+        background: white;
+        margin: 0 auto;
+        padding: 3em;
+        
+        h1
+        {
+            color: #06065c; 
+            font-size: 2rem;
+            text-align: left;
+        }
+        
+        .partners__container
+        {
+            padding: 3em;
+            @include Align(center,center);
+            .items
+            {
+                @include GridMaker(repeat(auto-fit,minmax(250px,1fr)),none,4.5em,0.65em);
+                justify-items: center;
+                align-items: center;
+                margin-top: 3em;
+                width: 90%;
+                .__item
+                {
+                    width: 50%;
+                    height: 8em;
+                    @include Align(center,center);
+                    flex-direction: column;
+                    border-radius: 0.25em;
+                    box-shadow: 0px 1px 20px 1px grey;
+                    background: white;
+                    position: relative;
+                    img
+                    {
+                        @include ReponsiveImage(100%,70%);
+                        background: $color_bg_primary;
+                      
+                    }
+
+                    label
+                    {
+                        position: absolute;
+                        bottom: -3em;
+                        font-weight: bold;
+                        font-size: 0.789rem;
+                        
+                    }
+                }
+               
+            }
+            
+        }
+        
+    }
+
+    #Team
+    {
+        width: 100%;
+        height: auto;
+        padding: 3em;
+        box-sizing: inherit;
+        overflow: hidden;
+        position: relative;
+
+        .teamContainer
+        {
+            width: inherit;
+            min-height: 480px;
+            height: 80vh;
+            max-height: 560px;
+            transform: skew(110deg);
+            background: #dcf0f793;
+            position: absolute;
+            top:2em;
+            z-index:-10;
+           
+        }
+        .__main
+        {
+            h1,p
+            {
+              color:#06065c;
+              margin-bottom: 0.67em;
+            }
+            h1
+            {
+                text-align: left;
+            }
+            p
+            {
+                text-align: justify;
+                line-height: 1.6em;
+            }
+
+
+
+        }
+
+        .teamMembers
+        {
+            padding: 2em;
+            box-sizing: inherit;
+            @include GridMaker(repeat(auto-fit,minmax(250px,1fr)),none,1em,1em);
+            justify-items: center;
+            align-items: center;
+             
+            .member
+            {
+                @include Align(center,center);
+                flex-direction: column;
+                border:0.2em solid transparent;
+                border-radius: 0.5em;
+                padding: 2em;
+                box-sizing: border-box;
+                background: white;
+                img
+                {
+                    @include ReponsiveImage(100%,60%);
+                    border-radius: inherit;
+                    margin-bottom: 5%;
+                }
+                .name,.designation
+                {
+                    color: #06065c;
+                    text-align: center;
+                    margin-bottom: 5%;
+                    text-transform: uppercase;
+                }
+                .name
+                {
+                    font-size: 1rem;
+                }
+                .designation
+                {
+                   font-size: 1.6vmin;
+                }
+
+            }
+        }
+    }
+}
+
+
+/*Footer */
+footer
+{
+
+}
