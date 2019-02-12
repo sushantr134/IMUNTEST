@@ -131,7 +131,7 @@ header nav ul li a {
 .main {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: url(/assets/images/b1.jpg) fixed no-repeat;
+  background: url(../images/b1.jpg) fixed no-repeat;
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -364,14 +364,14 @@ header nav ul li a {
 }
 
 .main #conferences .container .__cardBoxes .card.item1 {
-  background: url(/assets/images/hanoi.jpg) no-repeat;
+  background: url(../images/hanoi.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   height: 20em;
 }
 
 .main #conferences .container .__cardBoxes .card.item2 {
-  background: url(/assets/images/hanoi.jpg) no-repeat;
+  background: url(../images/hanoi.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   height: 15em;
