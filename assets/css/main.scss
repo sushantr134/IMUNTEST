@@ -10,6 +10,7 @@
 $color_bg_primary : #172337;
 $color_shade_primary: linear-gradient(-270deg,#172337ee,#172337c0,#172337af,#172337a8,transparent);
 $color_text : #ffffff;
+$color_common:#06065c;
 
 @mixin ReponsiveImage($width,$max_width) {
     max-width: $max_width;
@@ -226,7 +227,7 @@ header
                align-items: center;
                h1
                {
-                   color: #06065c; 
+                   color: $color_common; 
                    font-size: 2rem;
                    width: 50%; 
                    text-align: center;
@@ -237,7 +238,7 @@ header
               
                 label
                 {
-                    color: #06065c;
+                    color: $color_common;
                     text-align: right;
                     line-height: 1.5em;
                 }
@@ -333,7 +334,7 @@ header
         
         h1
         {
-            color: #06065c; 
+            color: $color_common; 
             font-size: 2rem;
             text-align: left;
         }
@@ -408,7 +409,7 @@ header
         {
             h1,p
             {
-              color:#06065c;
+              color:$color_common;
               margin-bottom: 0.67em;
             }
             h1
@@ -450,7 +451,7 @@ header
                 }
                 .name,.designation
                 {
-                    color: #06065c;
+                    color: $color_common;
                     text-align: center;
                     margin-bottom: 5%;
                     text-transform: uppercase;
@@ -467,11 +468,133 @@ header
             }
         }
     }
-}
+
+    #testimonials
+    {
+        padding: 3em;
+        width: 100%;
+        height: auto;
+
+       .__container
+       {
+
+            h1
+           {
+               color: $color_common;
+               text-align: left;
+           }
+           .__slider
+           {
+            //   @include GridMaker(repeat(auto-fit,minmax(200px,1fr)),none,1em,1em);
+                 @include Align(center,center);
+                 padding: 2em;
+                 margin-top: 2em;
+                 width: 100%;
+               .item
+               {
+                @include GridMaker(repeat(auto-fit,minmax(200px,1fr)),none,1em,1em);
+
+                .user
+                {
+                    border-radius: 100%;
+                    overflow: hidden;
+                    img
+                    {
+                        @include ReponsiveImage(100%,100%);
+                    }
+                }
+               }   
+           }
+       }
+    }
 
 
-/*Footer */
+    /*Footer */
 footer
 {
+  background: #183f83ee;
+  color: $color_text;
+  padding: 3em; 
+  margin: 0 auto !important;
+  position: relative;
+
+  .container__footer
+  {
+      @include GridMaker(repeat(auto-fit,minmax(250px,1fr)),minmax(200px,1fr),2em,2em);
+      justify-content: center;
+      align-items: flex-start;
+     
+
+      .aboutmun
+      {
+          @include Align(center,flex-start);
+          flex-direction: column;
+          width: 50vw;
+
+          h1
+          {
+              margin-bottom: 1em;
+              text-align: left;
+              font-size: 1.5rem;
+              letter-spacing: 1px;
+          }
+
+          p
+          {
+              text-align: justify;
+              font-size: 0.889rem;
+          }
+      }
+
+      .Contactform
+      {
+          padding: 2em;
+          box-sizing: inherit;
+          position: absolute;
+          top:-5em;
+          right: 6em;
+          z-index: 1000;
+          background: white;
+          width: 30vw;
+          border-radius: 0.3em solid black;
+          label
+          {
+              font-size: 1.2rem;
+
+              color: $color_common;
+
+          }
+          form
+          {
+        
+            padding: 2em;
+            @include Align(center,center);
+            flex-direction: column;
+            color: $color_common;
+            box-shadow: 0 10px 10px solid grey;
+
+            label
+            {
+            
+            }
+          }
+
+      }
+  }
+
+  .TaglineEnd
+  {
+      margin-top: 1em;
+      margin-bottom: 0.3em;
+      p
+      {
+          text-align: center;
+          font-size: 0.97rem;
+
+      }
+  }
+}
 
 }
+
+
