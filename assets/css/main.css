@@ -9,12 +9,13 @@
 
 /*Header navbar*/
 header {
-  background: transparent;
+  background: -webkit-gradient(linear, left top, right top, from(#172337ee), color-stop(#172337c0), color-stop(#172337af), color-stop(#172337a8), to(#213d6ea8));
+  background: linear-gradient(-270deg, #172337ee, #172337c0, #172337af, #172337a8, #213d6ea8);
   color: #ffffff;
   width: 100%;
   z-index: 1000;
   padding: 0.6em;
-  position: absolute;
+  position: fixed;
   top: 0;
   display: -ms-grid;
   display: grid;
@@ -88,7 +89,7 @@ header nav ul li .subList {
   position: absolute;
   top: 2em;
   z-index: 1001;
-  background: #06065c;
+  background: #213d6ece;
   width: 9.3em;
   padding: 1em;
   right: 0;
